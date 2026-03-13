@@ -1,0 +1,21 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtualenvs and caches
+.env
+env/
+venv/
+.venv/
+.cache/
+.pytest_cache/
+
+# Editor / IDE
+.vscode/
+.idea/
+
+
+# OS
+.DS_Store
+Thumbs.db

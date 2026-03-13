@@ -4,19 +4,19 @@ from nfa.NFAVisualizer import NFAVisualizer
 from nfa.NFABuilder import NFABuilder
 
 
-def process_regex(regex: str, output_name: str):
+def process_regex(regex: str, out_name: str):
     """Generates NFA JSON and image for given regex."""
     RegexValidator.validate(regex)
     nfa_builder = NFABuilder()
     nfa = nfa_builder.from_regex(regex)
 
     # Save JSON
-    json_path = f"{output_name}_nfa.json"
+    json_path = f"{out_name}_nfa.json"
     with open(json_path, "w") as f:
         f.write(nfa.to_json())
 
     # Save Image
-    img_path = f"{output_name}_nfa.png"
+    img_path = f"{out_name}_nfa.png"
     NFAVisualizer.save_image(nfa, img_path)
 
     print(f"NFA JSON saved: {json_path}")
@@ -63,6 +63,8 @@ def run_nfa_tests():
 
         # Mix of all operators
         "a(b|c)*d+",  # a followed by zero or more (b|c), then one or more d
+
+        "ab.c*d[a-c]", 
     ]
 
     for i, regex in enumerate(testcases, start=1):

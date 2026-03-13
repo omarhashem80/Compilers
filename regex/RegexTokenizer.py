@@ -14,7 +14,7 @@ class RegexTokenizer:
         i = 0
         while i < len(regex):
             if regex[i] == "-":  # Handle ranges
-                tokens[-1] = (regex[i - 1:i + 2], "var")
+                tokens[-1] = (f"[{regex[i-1]}-{regex[i+1]}]", "var")
                 i += 2
             elif regex[i] in "()[]*+?_|":
                 tokens.append((regex[i], "op"))

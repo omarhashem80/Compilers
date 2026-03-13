@@ -2,7 +2,7 @@
   "startingState": "S0",
   "S0": {
     "isTerminatingState": false,
-    "a-c": [
+    "[a-c]": [
       "S1"
     ]
   },
@@ -21,7 +21,7 @@
   },
   "S2": {
     "isTerminatingState": false,
-    "x-z": [
+    "[x-z]": [
       "S3"
     ]
   },
