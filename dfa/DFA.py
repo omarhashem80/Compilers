@@ -163,6 +163,8 @@ class DFA:
             entry = {"isTerminatingState": is_accepting}
             for symbol, next_states in curr.transitions.items():
                 entry[symbol] = [s.name for s in next_states]
+                if len(entry[symbol]) == 1:
+                    entry[symbol] = "".join([str(_) for _ in entry[symbol]])
                 for s in next_states:
                     if s.name not in visited:
                         visited.add(s.name)

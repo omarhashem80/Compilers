@@ -7,6 +7,30 @@
     ]
   },
   "S1": {
+    "isTerminatingState": false,
+    "\u03b5": [
+      "S2"
+    ]
+  },
+  "S2": {
+    "isTerminatingState": false,
+    "b": [
+      "S3"
+    ]
+  },
+  "S3": {
+    "isTerminatingState": false,
+    "\u03b5": [
+      "S4"
+    ]
+  },
+  "S4": {
+    "isTerminatingState": false,
+    "c": [
+      "S5"
+    ]
+  },
+  "S5": {
     "isTerminatingState": true
   }
 }

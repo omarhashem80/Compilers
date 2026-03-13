@@ -33,3 +33,24 @@ def process_regex(regex: str, output_name: str):
     NFAVisualizer.save_image(dfa, dfa_img_path)
     print(f"DFA JSON saved: {dfa_json_path}")
     print(f"DFA image saved: {dfa_img_path}")
+
+
+def run_nfa_tests():
+    testcases = [
+        "abc",  # a followed by b followed by c
+        "a|b",  # a or optional b
+        "ab.c*d[a-c]",
+    ]
+
+    for i, regex in enumerate(testcases, start=1):
+        output_name = f"outputs/testcase_{i}"
+        print(f"\nProcessing regex: '{regex}' -> Output prefix: '{output_name}'")
+        try:
+            process_regex(regex, output_name)
+        except ValueError as ve:
+            print(f"Invalid regex '{regex}': {ve}")
+
+
+# Run the extended test cases
+if __name__ == "__main__":
+    run_nfa_tests()

@@ -23,6 +23,9 @@ class NFAVisualizer:
             for symbol, next_states in trans.items():
                 if symbol == "isTerminatingState":
                     continue
+                if isinstance(next_states, str):
+                    G.add_edge(state, next_states, label=symbol)
+                    continue
                 for nxt in next_states:
                     G.add_edge(state, nxt, label=symbol)
         A = to_agraph(G)

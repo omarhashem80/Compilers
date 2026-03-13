@@ -1,15 +1,16 @@
 {
-  "startingState": "S0",
+  "startingState": "S4",
+  "S4": {
+    "isTerminatingState": false,
+    "\u03b5": [
+      "S0",
+      "S2"
+    ]
+  },
   "S0": {
     "isTerminatingState": false,
     "a": [
       "S1"
-    ]
-  },
-  "S1": {
-    "isTerminatingState": false,
-    "\u03b5": [
-      "S2"
     ]
   },
   "S2": {
@@ -18,15 +19,15 @@
       "S3"
     ]
   },
+  "S1": {
+    "isTerminatingState": false,
+    "\u03b5": [
+      "S5"
+    ]
+  },
   "S3": {
     "isTerminatingState": false,
     "\u03b5": [
-      "S4"
-    ]
-  },
-  "S4": {
-    "isTerminatingState": false,
-    "c": [
       "S5"
     ]
   },
